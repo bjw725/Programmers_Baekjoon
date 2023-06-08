@@ -12,3 +12,11 @@ class Solution {
         return answer;
     }
 }
+
+// 새로운 방법
+/*
+for(int i =0; i<num_list.length; i++){
+    answer[num_list[i]%2]++;
+    return answer;
+}
+*/
