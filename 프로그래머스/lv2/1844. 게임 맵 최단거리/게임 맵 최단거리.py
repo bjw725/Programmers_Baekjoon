@@ -25,5 +25,5 @@ def solution(maps):
     if bfs(0, 0) == 1:
         return -1
     else:
-        answer = bfs(0, 0)
+        answer = bfs(1, 1)
     return answer
