@@ -1,19 +1,22 @@
 N, r, c = map(int, input().split())
-visit = 0
+ans = 0
+
 while N != 0:
     N -= 1
-    size = 2**N
-    if r < size and c < size:
-        visit += 0
-    elif r < size and c >= size:
-        visit += size * size
-        c -= size
-    elif r >= size and c < size:
-        visit += size * size * 2
-        r -= size
-    else:
-        visit += size * size * 3
-        r -= size
-        c -= size
+    
+    if r < 2 ** N and c < 2 ** N:
+        ans += (2 ** N) * (2 ** N) * 0
         
-print(visit)
+    elif r < 2 ** N and c >= 2 ** N:
+        ans += (2 ** N) * (2 ** N) * 1
+        c -= (2 ** N)
+    
+    elif r >= 2 ** N and c < 2 ** N:
+        ans += (2 ** N) * (2 ** N) * 2
+        r -= (2 ** N)
+        
+    else:
+        ans += (2 ** N) * (2 ** N) * 3
+        r -= (2 ** N)
+        c -= (2 ** N)
+print(ans)
